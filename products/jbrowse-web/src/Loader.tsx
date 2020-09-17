@@ -12,7 +12,7 @@ import {
 } from 'use-query-params'
 import { AnyConfigurationModel } from '@gmod/jbrowse-core/configuration/configurationSchema'
 import { getConf } from '@gmod/jbrowse-core/configuration'
-import { SnapshotOut } from 'mobx-state-tree'
+import { SnapshotOut, onSnapshot } from 'mobx-state-tree'
 import { PluginConstructor } from '@gmod/jbrowse-core/Plugin'
 import { FatalErrorDialog } from '@gmod/jbrowse-core/ui'
 import { TextDecoder, TextEncoder } from 'fastestsmallesttextencoderdecoder'
@@ -112,8 +112,8 @@ export function Loader() {
 
   const [configQueryParam] = useQueryParam('config', StringParam)
   const [sessionQueryParam] = useQueryParam('session', StringParam)
-  const [adminQueryParam] = useQueryParam('admin', StringParam)
-  const adminMode = adminQueryParam === '1' || adminQueryParam === 'true'
+  const [adminKeyParam] = useQueryParam('adminKey', StringParam)
+  const adminMode = adminKeyParam !== undefined
 
   useEffect(() => {
     async function fetchConfig() {
@@ -147,6 +147,16 @@ export function Loader() {
     }
     fetchConfig()
   }, [configQueryParam])
+
+  useEffect(() => {
+    onSnapshot(rootModel, snapshot => {
+      fetch('/updateConfig', {
+        method: 'POST',
+        newConfig: snapshot.jbrowse,
+        adminKey: adminKeyParam,
+      })
+    })
+  }, [rootModel, adminKeyParam])
 
   useEffect(() => {
     async function fetchPlugins() {
@@ -188,6 +198,8 @@ export function Loader() {
         assemblyManager: {},
         version: packagedef.version,
       })
+
+      rootModel.jbrowse < --config
     }
   } catch (error) {
     // if it failed to load, it's probably a problem with the saved sessions,
