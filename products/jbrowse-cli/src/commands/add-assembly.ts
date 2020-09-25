@@ -411,7 +411,7 @@ custom         Either a JSON file location or inline JSON that defines a custom
 
     let configContentsJson
     try {
-      configContentsJson = await this.readJsonConfig()
+      configContentsJson = await this.readJsonConfig(this.target)
       this.debug(`Found existing config file ${this.target}`)
     } catch (error) {
       this.debug('No existing config file found, using default config')
@@ -431,6 +431,7 @@ custom         Either a JSON file location or inline JSON that defines a custom
     const idx = configContents.assemblies.findIndex(
       configAssembly => configAssembly.name === assembly.name,
     )
+
     if (idx !== -1) {
       this.debug(`Found existing assembly ${name} in configuration`)
       if (runFlags.overwrite || runFlags.force) {
@@ -450,6 +451,12 @@ custom         Either a JSON file location or inline JSON that defines a custom
     await fsPromises.writeFile(
       this.target,
       JSON.stringify(configContents, undefined, 2),
+    )
+
+    this.log(
+      `${idx !== -1 ? 'Overwrote' : 'Added'} assembly "${assembly.name}" ${
+        idx !== -1 ? 'in' : 'to'
+      } ${this.target}`,
     )
   }
 
@@ -507,7 +514,10 @@ custom         Either a JSON file location or inline JSON that defines a custom
             if (!filePath) return
 
             try {
-              await fsPromises.copyFile(filePath, destination)
+              await fsPromises.copyFile(
+                filePath,
+                path.join(path.dirname(destination), path.basename(filePath)),
+              )
             } catch (error) {
               this.error(error, { exit: 180 })
             }
@@ -520,7 +530,10 @@ custom         Either a JSON file location or inline JSON that defines a custom
           filePaths.map(async filePath => {
             if (!filePath) return
             try {
-              await fsPromises.symlink(filePath, destination)
+              await fsPromises.symlink(
+                filePath,
+                path.join(path.dirname(destination), path.basename(filePath)),
+              )
             } catch (error) {
               this.error(error, { exit: 180 })
             }
@@ -534,7 +547,10 @@ custom         Either a JSON file location or inline JSON that defines a custom
             if (!filePath) return
 
             try {
-              await fsPromises.rename(filePath, destination)
+              await fsPromises.rename(
+                filePath,
+                path.join(path.dirname(destination), path.basename(filePath)),
+              )
             } catch (error) {
               this.error(error, { exit: 180 })
             }
