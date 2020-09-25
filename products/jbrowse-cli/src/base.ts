@@ -166,6 +166,7 @@ export default abstract class JBrowseCommand extends Command {
         // ignore
       }
     }
+
     try {
       if (check) {
         locationPath = await fsPromises.realpath(location)

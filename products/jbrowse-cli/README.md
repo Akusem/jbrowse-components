@@ -98,6 +98,9 @@ OPTIONS
   --gziLocation=gziLocation
       [default: <fastaLocation>.gzi] FASTA gzip index file or URL
 
+  --out=out
+      synonym for target
+
   --overwrite
       Overwrite existing assembly if one with the same name exists
 
@@ -117,7 +120,7 @@ OPTIONS
       Don't check whether or not the sequence file or URL exists or if you are in a JBrowse directory
 
   --target=target
-      [default: ./config.json] path to config file in JB2 installation directory to write out to.
+      path to config file in JB2 installation directory to write out to.
       Creates ./config.json if nonexistent
 
 EXAMPLES
@@ -322,7 +325,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
 
 ## `jbrowse set-default-session`
 
