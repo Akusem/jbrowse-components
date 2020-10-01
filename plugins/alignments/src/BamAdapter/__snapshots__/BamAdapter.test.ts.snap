@@ -340,7 +340,7 @@ Array [
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 108,
     "type": "insertion",
   },
@@ -358,13 +358,13 @@ Array [
   },
   Object {
     "base": "3",
-    "length": 1,
+    "length": 0,
     "start": 177,
     "type": "insertion",
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 209,
     "type": "insertion",
   },
@@ -436,7 +436,7 @@ Array [
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 284,
     "type": "insertion",
   },
@@ -514,19 +514,19 @@ Array [
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 339,
     "type": "insertion",
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 345,
     "type": "insertion",
   },
   Object {
     "base": "2",
-    "length": 1,
+    "length": 0,
     "start": 352,
     "type": "insertion",
   },
@@ -544,19 +544,19 @@ Array [
   },
   Object {
     "base": "67",
-    "length": 1,
+    "length": 0,
     "start": 403,
     "type": "insertion",
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 427,
     "type": "insertion",
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 433,
     "type": "insertion",
   },
@@ -586,13 +586,13 @@ Array [
   },
   Object {
     "base": "7",
-    "length": 1,
+    "length": 0,
     "start": 626,
     "type": "insertion",
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 627,
     "type": "insertion",
   },
@@ -646,7 +646,7 @@ Array [
   },
   Object {
     "base": "4",
-    "length": 1,
+    "length": 0,
     "start": 818,
     "type": "insertion",
   },
@@ -658,13 +658,13 @@ Array [
   },
   Object {
     "base": "4",
-    "length": 1,
+    "length": 0,
     "start": 822,
     "type": "insertion",
   },
   Object {
     "base": "8",
-    "length": 1,
+    "length": 0,
     "start": 828,
     "type": "insertion",
   },
@@ -682,7 +682,7 @@ Array [
   },
   Object {
     "base": "47",
-    "length": 1,
+    "length": 0,
     "start": 889,
     "type": "insertion",
   },
@@ -718,7 +718,7 @@ Array [
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 968,
     "type": "insertion",
   },
@@ -748,13 +748,13 @@ Array [
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 1063,
     "type": "insertion",
   },
   Object {
     "base": "2",
-    "length": 1,
+    "length": 0,
     "start": 1068,
     "type": "insertion",
   },
@@ -904,7 +904,7 @@ Array [
   },
   Object {
     "base": "5",
-    "length": 1,
+    "length": 0,
     "start": 4455,
     "type": "insertion",
   },
@@ -964,7 +964,7 @@ Array [
   },
   Object {
     "base": "1",
-    "length": 1,
+    "length": 0,
     "start": 5903,
     "type": "insertion",
   },

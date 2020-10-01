@@ -327,7 +327,7 @@ export default class CramSlightlyLazyFeature implements Feature {
             start: refPos,
             type: 'insertion',
             base: `${data.length}`,
-            length: data.length,
+            length: 0,
           })
         } else if (code === 'N') {
           // reference skip
